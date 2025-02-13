@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 using AppTrackingTransparency.Common;
-using AppTrackingTransparency.Editor.Settings;
+using AppTrackingTransparency.Common.Settings;
 using UnityEditor;
 using UnityEngine;
 

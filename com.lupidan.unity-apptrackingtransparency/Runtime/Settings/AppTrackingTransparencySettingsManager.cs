@@ -1,7 +1,7 @@
 using System.IO;
 using UnityEngine;
 
-namespace AppTrackingTransparency.Editor.Settings
+namespace AppTrackingTransparency.Common.Settings
 {
     public static class AppTrackingTransparencySettingsManager
     {

@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using AppTrackingTransparency.Common;
-using AppTrackingTransparency.Editor.Settings;
+using AppTrackingTransparency.Common.Settings;
 using UnityEditor;
 using UnityEngine;
 
-namespace AppTrackingTransparency.Editor
+namespace AppTrackingTransparency.Common
 {
+    #if UNITY_EDITOR
     public class EditorAppTrackingTransparencyManager : IAppTrackingTransparencyManager
     {
         private readonly List<Action> _pendingCallbacks = new List<Action>();
@@ -63,4 +63,5 @@ namespace AppTrackingTransparency.Editor
                 : AppTrackingTransparencyEditorPrefs.AnonymousIdfa;
         }
     }
+    #endif
 }

@@ -1,7 +1,6 @@
-using AppTrackingTransparency.Common;
-
-namespace AppTrackingTransparency.Editor
+namespace AppTrackingTransparency.Common
 {
+#if UNITY_EDITOR
     public static class AppTrackingTransparencyEditorPrefs
     {
         /// <summary>
@@ -10,7 +9,10 @@ namespace AppTrackingTransparency.Editor
         internal const string AnonymousIdfa = "00000000-0000-0000-0000-000000000000";
 
         private const string IdfaEditorPrefKey = "com.lupidan.unity-apptrackingtransparency.idfa";
-        private const string AuthorizationStatusEditorPrefKey = "com.lupidan.unity-apptrackingtransparency.authorizationstatus";
+
+        private const string AuthorizationStatusEditorPrefKey =
+            "com.lupidan.unity-apptrackingtransparency.authorizationstatus";
+
         private const int DefaultAuthorizationStatus = (int)AppTrackingTransparencyAuthorizationStatus.NotDetermined;
 
         /// <summary>
@@ -27,8 +29,9 @@ namespace AppTrackingTransparency.Editor
         /// </summary>
         public static AppTrackingTransparencyAuthorizationStatus AuthorizationStatus
         {
-            get => (AppTrackingTransparencyAuthorizationStatus) UnityEditor.EditorPrefs.GetInt(AuthorizationStatusEditorPrefKey, DefaultAuthorizationStatus);
-            set => UnityEditor.EditorPrefs.SetInt(AuthorizationStatusEditorPrefKey, (int) value);
+            get => (AppTrackingTransparencyAuthorizationStatus)UnityEditor.EditorPrefs.GetInt(
+                AuthorizationStatusEditorPrefKey, DefaultAuthorizationStatus);
+            set => UnityEditor.EditorPrefs.SetInt(AuthorizationStatusEditorPrefKey, (int)value);
         }
 
         /// <summary>
@@ -40,4 +43,5 @@ namespace AppTrackingTransparency.Editor
             UnityEditor.EditorPrefs.DeleteKey(AuthorizationStatusEditorPrefKey);
         }
     }
+#endif
 }

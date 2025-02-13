@@ -1,17 +1,4 @@
 {
-    "name": "AppTrackingTransparency.Editor",
-    "references": [
-        "AppTrackingTransparency.Common"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": false,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+	"name": "Editor",
+	"references":[ "GUID:45ef1b2a737c943e7b09569e3d25a68a", "GUID:175dd095c0f0f443895ad89ef6d8b501" ]
 }

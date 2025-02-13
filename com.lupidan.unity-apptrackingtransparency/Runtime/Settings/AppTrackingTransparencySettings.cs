@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AppTrackingTransparency.Editor.Settings
+namespace AppTrackingTransparency.Common.Settings
 {
     [Serializable]
     public class AppTrackingTransparencySettings

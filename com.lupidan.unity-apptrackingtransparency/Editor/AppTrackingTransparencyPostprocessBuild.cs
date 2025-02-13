@@ -1,5 +1,5 @@
 using System.IO;
-using AppTrackingTransparency.Editor.Settings;
+using AppTrackingTransparency.Common.Settings;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;

@@ -1,13 +1,4 @@
 {
-    "name": "AppTrackingTransparency.Common",
-    "references": [],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": false,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+	"name": "AppTrackingTransparency.Common",
+	"references":[ "GUID:175dd095c0f0f443895ad89ef6d8b501" ]
 }
