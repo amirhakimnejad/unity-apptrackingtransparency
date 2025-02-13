@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/RequestTrackingSample/RequestTrackingSampleScene.unity
     guid: 90da4b86c34484d6f8f32c1216e93eb9
   m_configObjects: {}
