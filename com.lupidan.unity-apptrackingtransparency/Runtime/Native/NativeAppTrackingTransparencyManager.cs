@@ -6,13 +6,21 @@ namespace AppTrackingTransparency.Native
 {
     public class NativeAppTrackingTransparencyManager : IAppTrackingTransparencyManager
     {
-        public string Idfa { get { return UnityEngine.iOS.Device.advertisingIdentifier; } }
+#if UNITY_IOS
+        public string Idfa => UnityEngine.iOS.Device.advertisingIdentifier;
+#else
+        public string Idfa => "00000000-0000-0000-0000-000000000000";
+#endif
 
         public AppTrackingTransparencyAuthorizationStatus TrackingAuthorizationStatus
         {
             get
             {
+#if UNITY_IOS
                 var rawAuthorizationStatus = PInvoke.AppTrackingTransparencyManager_GetTrackingAuthorizationStatus();
+#else
+                var rawAuthorizationStatus = 0U;
+#endif
                 return GetAuthorizationStatusFromUnsignedInteger(rawAuthorizationStatus);
             }
         }
@@ -24,7 +32,9 @@ namespace AppTrackingTransparency.Native
                 completion(GetAuthorizationStatusFromUnsignedInteger(rawAuthorizationStatus));
             });
 
+#if UNITY_IOS
             PInvoke.AppTrackingTransparencyManager_RequestTrackingAuthorizationCallback(requestId);
+#endif
         }
 
         public void Update()
@@ -58,8 +68,10 @@ namespace AppTrackingTransparency.Native
 
                 if (!_isInitialized)
                 {
+#if UNITY_IOS
                     PInvoke.AppTrackingTransparencyManager_SetRequestTrackingAuthorizationCallbackHandler(
                         PInvoke.RequestTrackingAuthorizationCallbackHandler);
+#endif
 
                     _isInitialized = true;
                 }
@@ -123,6 +135,8 @@ namespace AppTrackingTransparency.Native
                 }
             }
 
+#if UNITY_IOS
+
             [System.Runtime.InteropServices.DllImport(DllName)]
             public static extern uint AppTrackingTransparencyManager_GetTrackingAuthorizationStatus();
 
@@ -131,6 +145,7 @@ namespace AppTrackingTransparency.Native
 
             [System.Runtime.InteropServices.DllImport(DllName)]
             public static extern void AppTrackingTransparencyManager_RequestTrackingAuthorizationCallback(uint requestId);
+#endif
         }
     }
 }
